@@ -317,12 +317,12 @@ export default function EnUnoLanding() {
             <a href="#pricing" style={{ fontSize: 14, fontWeight: 500, color: T.body, textDecoration: "none", transition: "color 0.2s", letterSpacing: "-0.01em" }}>Precios</a>
             <a href="#contacto" style={{ fontSize: 14, fontWeight: 500, color: T.body, textDecoration: "none", transition: "color 0.2s", letterSpacing: "-0.01em" }}>Contacto</a>
             <div style={{ width: 1, height: 20, background: T.line, margin: "0 2px" }} />
-            <a href="#" style={{
+            <a href="https://maestro-app-omega.vercel.app/?mode=login" style={{
               fontSize: 13.5, fontWeight: 500, color: T.ink,
               textDecoration: "none", transition: "color 0.2s",
               letterSpacing: "-0.01em",
             }}>Ingreso</a>
-            <a href="#" style={{
+            <a href="https://maestro-app-omega.vercel.app/?mode=register" style={{
               fontSize: 13.5, fontWeight: 600, color: "#fff",
               padding: "9px 22px", borderRadius: 100,
               background: T.ink,
@@ -349,14 +349,14 @@ export default function EnUnoLanding() {
         <a href="#pricing" className="k-mob-link" onClick={() => setMobileOpen(false)}>Precios</a>
         <a href="#contacto" className="k-mob-link" onClick={() => setMobileOpen(false)}>Contacto</a>
         <div className="k-mob-actions" style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 24 }}>
-          <a href="#" style={{
+          <a href="https://maestro-app-omega.vercel.app/?mode=login" style={{
             display: "block", textAlign: "center",
             fontSize: 15, fontWeight: 500, color: T.ink,
             padding: "13px 24px", borderRadius: 100,
             border: `1.5px solid ${T.line}`,
             textDecoration: "none",
           }}>Ingreso</a>
-          <a href="#" style={{
+          <a href="https://maestro-app-omega.vercel.app/?mode=register" style={{
             display: "block", textAlign: "center",
             fontSize: 15, fontWeight: 600, color: "#fff",
             padding: "13px 24px", borderRadius: 100,
@@ -420,7 +420,7 @@ export default function EnUnoLanding() {
 
           <R delay={0.18}>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
-              <a href="#" className="k-btn-primary" style={{ fontSize: 16, padding: "17px 40px" }}>
+              <a href="https://maestro-app-omega.vercel.app/?mode=register" className="k-btn-primary" style={{ fontSize: 16, padding: "17px 40px" }}>
                 Conectar mi calendario
                 <ArrowR />
               </a>
@@ -660,9 +660,9 @@ export default function EnUnoLanding() {
                     ))}
                   </ul>
                   {p.hot ? (
-                    <a href="#" className="k-btn-amber">{p.cta}</a>
+                    <a href="https://maestro-app-omega.vercel.app/?mode=register" className="k-btn-amber">{p.cta}</a>
                   ) : (
-                    <a href="#" className="k-btn-ghost">{p.cta}</a>
+                    <a href="https://maestro-app-omega.vercel.app/?mode=register" className="k-btn-ghost">{p.cta}</a>
                   )}
                 </div>
               </R>
@@ -701,7 +701,7 @@ export default function EnUnoLanding() {
           </R>
           <R delay={0.14}>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
-              <a href="#" className="k-btn-primary" style={{ fontSize: 16, padding: "17px 42px" }}>
+              <a href="https://maestro-app-omega.vercel.app/?mode=register" className="k-btn-primary" style={{ fontSize: 16, padding: "17px 42px" }}>
                 Empezar ahora
                 <ArrowR />
               </a>
