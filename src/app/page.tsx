@@ -16,8 +16,8 @@ const T = {
   goldMuted:"#D4A82A",
   honey:    "#F5D76E",
   ink:      "#2C2417",
-  body:     "#6B5F4F",
-  muted:    "#9A8E7E",
+  body:     "#5A4D40",   // was #6B5F4F — now ~5.8:1 on bg (WCAG AA ✓)
+  muted:    "#6E6358",   // was #9A8E7E — now ~5.0:1 on bg (WCAG AA ✓)
   sage:     "#7BAB5E",
   bg:       "#FFFDF8",
   linen:    "#FAF7F0",
@@ -78,20 +78,20 @@ function R({ children, delay = 0, className = "", style = {} }) {
 
 // ─── Icons ───
 const ArrowR = () => (
-  <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 10h10M11 5l5 5-5 5"/></svg>
+  <svg aria-hidden="true" width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 10h10M11 5l5 5-5 5"/></svg>
 );
 const CalIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={T.amber} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={T.amber} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
     <rect x="3" y="4" width="18" height="18" rx="2.5"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
   </svg>
 );
 const LinkIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={T.amber} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={T.amber} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
     <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
   </svg>
 );
 const TeamIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={T.amber} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={T.amber} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
   </svg>
 );
@@ -130,7 +130,7 @@ const bClr = {
 
 // ─── Decorative: concentric rings SVG for hero ───
 const HeroRings = () => (
-  <svg style={{ position:"absolute", top:"-20%", right:"-15%", width:"70%", height:"140%", opacity:0.035, pointerEvents:"none" }}
+  <svg aria-hidden="true" style={{ position:"absolute", top:"-20%", right:"-15%", width:"70%", height:"140%", opacity:0.035, pointerEvents:"none" }}
     viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
     {[80,140,200,260,320,380,440,500].map(r => (
       <circle key={r} cx="300" cy="300" r={r} stroke="#B49A40" strokeWidth="0.8"/>
@@ -140,7 +140,7 @@ const HeroRings = () => (
 
 // ─── Dot pattern for sections ───
 const DotPattern = ({ opacity = 0.03 }) => (
-  <div style={{
+  <div aria-hidden="true" style={{
     position: "absolute", inset: 0, pointerEvents: "none", opacity,
     backgroundImage: `radial-gradient(circle, ${T.body} 0.6px, transparent 0.6px)`,
     backgroundSize: "24px 24px",
@@ -155,7 +155,7 @@ export default function EnUnoLanding() {
       display: "inline-flex", alignItems: "center", gap: 7,
       background: T.bg, border: `1px solid ${T.line}`,
       borderRadius: 100, padding: "7px 16px",
-      fontSize: 12.5, fontWeight: 500, color: T.ink,
+      fontSize: 14, fontWeight: 500, color: T.ink,
     }}>
       <span style={{ width: 7, height: 7, borderRadius: "50%", background: color }} />
       {label}
@@ -163,8 +163,8 @@ export default function EnUnoLanding() {
   );
 
   const Check = ({ children }) => (
-    <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: T.body }}>
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke={T.sage} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+    <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 14, color: T.body }}>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5L6.5 12L13 4" stroke={T.sage} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
       {children}
     </span>
   );
@@ -220,7 +220,7 @@ export default function EnUnoLanding() {
 
         .k-btn-ghost {
           display: block; text-align: center;
-          font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px;
+          font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 15px;
           padding: 13px 24px; border-radius: 100px;
           text-decoration: none; border: 1.5px solid ${T.line};
           color: ${T.ink}; background: transparent;
@@ -233,7 +233,7 @@ export default function EnUnoLanding() {
 
         .k-btn-amber {
           display: block; text-align: center;
-          font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px;
+          font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 15px;
           padding: 14px 24px; border-radius: 100px;
           text-decoration: none; border: none;
           color: #fff; background: ${T.amber};
@@ -251,8 +251,12 @@ export default function EnUnoLanding() {
           font-weight: 400;
         }
 
+        /* Focus indicators (WCAG 2.4.7) */
+        *:focus-visible { outline: 2px solid #C89520; outline-offset: 2px; border-radius: 4px; }
+        a:focus-visible, button:focus-visible { outline: 2px solid #C89520; outline-offset: 3px; border-radius: 6px; }
+
         /* Hamburger */
-        .k-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin-right: -8px; }
+        .k-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px; margin-right: -12px; min-width: 44px; min-height: 44px; }
         .k-hamburger span { display: block; width: 20px; height: 2px; background: ${T.ink}; border-radius: 2px; transition: all 0.3s ease; }
         .k-hamburger span + span { margin-top: 5px; }
         .k-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(3.5px, 3.5px); }
@@ -296,6 +300,14 @@ export default function EnUnoLanding() {
         @media (max-width: 500px) {
           .k-grid-4 { grid-template-columns: 1fr !important; }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
       `}</style>
 
       {/* ═══════ NAV ═══════ */}
@@ -313,17 +325,17 @@ export default function EnUnoLanding() {
 
           {/* Desktop links */}
           <div className="k-nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
-            <a href="#features" style={{ fontSize: 14, fontWeight: 500, color: T.body, textDecoration: "none", transition: "color 0.2s", letterSpacing: "-0.01em" }}>Producto</a>
-            <a href="#pricing" style={{ fontSize: 14, fontWeight: 500, color: T.body, textDecoration: "none", transition: "color 0.2s", letterSpacing: "-0.01em" }}>Precios</a>
-            <a href="#contacto" style={{ fontSize: 14, fontWeight: 500, color: T.body, textDecoration: "none", transition: "color 0.2s", letterSpacing: "-0.01em" }}>Contacto</a>
+            <a href="#features" style={{ fontSize: 15, fontWeight: 500, color: T.body, textDecoration: "none", transition: "color 0.2s", letterSpacing: "-0.01em" }}>Producto</a>
+            <a href="#pricing" style={{ fontSize: 15, fontWeight: 500, color: T.body, textDecoration: "none", transition: "color 0.2s", letterSpacing: "-0.01em" }}>Precios</a>
+            <a href="#contacto" style={{ fontSize: 15, fontWeight: 500, color: T.body, textDecoration: "none", transition: "color 0.2s", letterSpacing: "-0.01em" }}>Contacto</a>
             <div style={{ width: 1, height: 20, background: T.line, margin: "0 2px" }} />
             <a href="https://maestro-app-omega.vercel.app/?mode=login" style={{
-              fontSize: 13.5, fontWeight: 500, color: T.ink,
+              fontSize: 15, fontWeight: 500, color: T.ink,
               textDecoration: "none", transition: "color 0.2s",
               letterSpacing: "-0.01em",
             }}>Ingreso</a>
             <a href="https://maestro-app-omega.vercel.app/?mode=register" style={{
-              fontSize: 13.5, fontWeight: 600, color: "#fff",
+              fontSize: 15, fontWeight: 600, color: "#fff",
               padding: "9px 22px", borderRadius: 100,
               background: T.ink,
               textDecoration: "none", transition: "all 0.25s cubic-bezier(.16,1,.3,1)",
@@ -388,7 +400,7 @@ export default function EnUnoLanding() {
               background: "rgba(200,149,32,0.06)",
               border: `1px solid rgba(200,149,32,0.12)`,
               color: T.amberDk, borderRadius: 100,
-              fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase",
+              fontSize: 12, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase",
               padding: "6px 18px 6px 14px", marginBottom: 36,
             }}>
               <span style={{ width: 5, height: 5, borderRadius: "50%", background: T.gold, animation: "pulse 2.2s ease-in-out infinite" }} />
@@ -444,7 +456,7 @@ export default function EnUnoLanding() {
                 position: "absolute", top: 48, right: 18, zIndex: 5,
                 background: T.ink, color: T.honey,
                 borderRadius: 100, padding: "7px 16px",
-                fontSize: 11.5, fontWeight: 600, letterSpacing: "0.02em",
+                fontSize: 13, fontWeight: 600, letterSpacing: "0.02em",
                 display: "flex", alignItems: "center", gap: 7,
                 boxShadow: "0 6px 20px rgba(44,36,23,0.15)",
                 animation: "float 3.5s ease-in-out infinite",
@@ -469,12 +481,12 @@ export default function EnUnoLanding() {
                       <span key={c} style={{ width: 10, height: 10, borderRadius: "50%", background: c, opacity: 0.85 }}/>
                     ))}
                   </div>
-                  <div style={{ flex: 1, textAlign: "center", fontSize: 11.5, color: T.muted, fontWeight: 500, letterSpacing: "0.01em" }}>app.enuno.ai</div>
+                  <div style={{ flex: 1, textAlign: "center", fontSize: 13, color: T.muted, fontWeight: 500, letterSpacing: "0.01em" }}>app.enuno.ai</div>
                 </div>
 
                 <div className="k-mockup-body" style={{ display: "grid", gridTemplateColumns: "165px 1fr", minHeight: 310 }}>
                   <div className="k-mockup-side" style={{ background: T.linen, borderRight: `1px solid ${T.lineFaint}`, padding: "18px 14px" }}>
-                    <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: T.muted, marginBottom: 12, padding: "0 6px" }}>Semana</div>
+                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: T.muted, marginBottom: 12, padding: "0 6px" }}>Semana</div>
                     {[
                       { l: "Esta semana", c: T.amber, active: true },
                       { l: "Focus Time", c: T.sage },
@@ -483,7 +495,7 @@ export default function EnUnoLanding() {
                     ].map(item => (
                       <div key={item.l} style={{
                         display: "flex", alignItems: "center", gap: 9, padding: "8px 10px", borderRadius: 8, marginBottom: 2,
-                        fontSize: 12, color: item.active ? T.ink : T.body, fontWeight: item.active ? 600 : 400,
+                        fontSize: 13, color: item.active ? T.ink : T.body, fontWeight: item.active ? 600 : 400,
                         background: item.active ? T.bg : "transparent",
                         boxShadow: item.active ? `0 1px 4px rgba(44,36,23,0.05)` : "none",
                       }}>
@@ -496,7 +508,7 @@ export default function EnUnoLanding() {
                   <div style={{ padding: 18, display: "flex", flexDirection: "column", gap: 6 }}>
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 5 }}>
                       {["LUN","MAR","MIÉ","JUE","VIE"].map(d => (
-                        <div key={d} style={{ textAlign: "center", fontSize: 10, fontWeight: 600, letterSpacing: "0.06em", color: T.muted, paddingBottom: 8 }}>{d}</div>
+                        <div key={d} style={{ textAlign: "center", fontSize: 11, fontWeight: 600, letterSpacing: "0.06em", color: T.muted, paddingBottom: 8 }}>{d}</div>
                       ))}
                     </div>
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 5 }}>
@@ -508,9 +520,9 @@ export default function EnUnoLanding() {
                             borderRadius: 8, padding: "8px 10px", minHeight: 54,
                             display: "flex", flexDirection: "column", justifyContent: "flex-end",
                             background: c.bg, border: `1.5px solid ${c.border}`, color: c.color,
-                            fontSize: 10.5, fontWeight: 600,
+                            fontSize: 11, fontWeight: 600,
                           }}>
-                            <div style={{ fontSize: 9, fontWeight: 400, opacity: 0.55, marginBottom: 2 }}>{b[1]}</div>
+                            <div style={{ fontSize: 10, fontWeight: 400, opacity: 0.55, marginBottom: 2 }}>{b[1]}</div>
                             {b[2]}
                           </div>
                         );
@@ -542,7 +554,7 @@ export default function EnUnoLanding() {
                   borderRight: i < 3 ? `1px solid ${T.line}` : "none",
                 }}>
                   <Counter target={s.target} suffix={s.suffix || ""} />
-                  <span style={{ display: "block", fontSize: 12.5, color: T.body, lineHeight: 1.45, marginTop: 10, letterSpacing: "-0.01em" }}>{s.label}</span>
+                  <span style={{ display: "block", fontSize: 14, color: T.body, lineHeight: 1.5, marginTop: 10, letterSpacing: "-0.01em" }}>{s.label}</span>
                 </div>
               </R>
             ))}
@@ -616,7 +628,7 @@ export default function EnUnoLanding() {
               }}>
                 Empezá gratis,<br/>crecé cuando quieras
               </h2>
-              <p style={{ fontSize: 15.5, color: T.body }}>Sin contratos, sin sorpresas. Cancelá cuando quieras.</p>
+              <p style={{ fontSize: 16, color: T.body }}>Sin contratos, sin sorpresas. Cancelá cuando quieras.</p>
             </div>
           </R>
 
@@ -635,11 +647,11 @@ export default function EnUnoLanding() {
                     <div style={{
                       position: "absolute", top: -1, left: "50%", transform: "translateX(-50%)",
                       background: T.amber, color: "#fff",
-                      fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase",
+                      fontSize: 12, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase",
                       padding: "5px 16px", borderRadius: "0 0 10px 10px",
                     }}>Más popular</div>
                   )}
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: T.muted, marginBottom: 14 }}>{p.tier}</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: T.muted, marginBottom: 14 }}>{p.tier}</div>
                   {p.price ? (
                     <div className="k-serif" style={{ fontSize: 52, color: T.ink, letterSpacing: "-0.03em", lineHeight: 1, marginBottom: 8 }}>
                       <sup style={{ fontSize: 22, verticalAlign: "super", fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}>$</sup>
@@ -649,12 +661,12 @@ export default function EnUnoLanding() {
                   ) : (
                     <div className="k-serif" style={{ fontSize: 40, fontStyle: "italic", color: T.ink, lineHeight: 1, marginBottom: 8, paddingTop: 6 }}>A medida</div>
                   )}
-                  <div style={{ fontSize: 13, color: T.body, marginBottom: 28 }}>{p.desc}</div>
+                  <div style={{ fontSize: 14, color: T.body, marginBottom: 28 }}>{p.desc}</div>
                   <div style={{ height: 1, background: T.line, marginBottom: 22 }}/>
                   <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12, marginBottom: 30, flex: 1 }}>
                     {p.items.map(item => (
-                      <li key={item} style={{ display: "flex", gap: 9, fontSize: 13.5, color: T.ink, lineHeight: 1.45 }}>
-                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: 2 }}><path d="M3 8.5L6.5 12L13 4" stroke={T.sage} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                      <li key={item} style={{ display: "flex", gap: 9, fontSize: 14, color: T.ink, lineHeight: 1.55 }}>
+                        <svg aria-hidden="true" width="15" height="15" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0, marginTop: 2 }}><path d="M3 8.5L6.5 12L13 4" stroke={T.sage} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
                         {item}
                       </li>
                     ))}
@@ -722,9 +734,9 @@ export default function EnUnoLanding() {
               <span style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 21, color: T.ink }}>En</span>
               <span className="k-serif" style={{ fontSize: 23, color: T.amber, fontStyle: "italic" }}>Uno</span>
           </a>
-          <p style={{ fontSize: 13, color: T.body, lineHeight: 1.55 }}>IA para tu agenda. Creado para LATAM.</p>
+          <p style={{ fontSize: 14, color: T.body, lineHeight: 1.55 }}>IA para tu agenda. Creado para LATAM.</p>
           <div style={{ height: 1, width: 60, background: T.line, margin: "12px 0" }}/>
-          <span style={{ fontSize: 12, color: T.muted }}>© 2025 EnUno. Hecho con ♥ en América Latina.</span>
+          <span style={{ fontSize: 13, color: T.muted }}>© 2025 EnUno. Hecho con ♥ en América Latina.</span>
         </div>
       </footer>
     </>
