@@ -28,7 +28,7 @@ const T = {
 
 // ─── Animated Counter ───
 function Counter({ target, suffix = "" }) {
-  const [val, setVal] = useState(0);
+  const [val, setVal] = useState<number | string>(0);
   const ref = useRef(null);
   const started = useRef(false);
   useEffect(() => {
